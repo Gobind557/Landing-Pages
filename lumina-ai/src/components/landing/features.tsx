@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Section } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 
 const features = [
   {
@@ -111,36 +113,40 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-14 sm:py-20">
+    <Section id="features" glow="both">
       <Container>
-        <SectionHeading
-          eyebrow="Features"
-          title="Everything You Need for AI-Driven Outreach"
-          description="From prospect management to automated follow-ups and AI insights—Lumina is built to help you ship more meetings."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Features"
+            title="Everything you need to run outbound with focus"
+            description="Prospects, campaigns, follow-ups, and performance — orchestrated by AI, controlled by you."
+            align="center"
+          />
+        </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((f) => (
-            <Card key={f.title} className="p-5">
-              <div className="flex items-start gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-2xl bg-[color-mix(in_oklab,var(--primary)_12%,transparent)] text-primary ring-1 ring-[color-mix(in_oklab,var(--primary)_20%,transparent)]">
-                  {f.icon}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f, idx) => (
+            <Reveal key={f.title} delayMs={idx * 60}>
+              <Card className="rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-none transition duration-300 hover:bg-white/10 hover:ring-[rgba(124,58,237,0.40)]">
+                <div className="flex items-start gap-4">
+                  <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[rgba(124,58,237,0.14)] text-(--color-primary) ring-1 ring-[rgba(124,58,237,0.24)]">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold tracking-tight text-foreground">
+                      {f.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">
+                      {f.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground">
-                    {f.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-muted">
-                    {f.description}
-                  </p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

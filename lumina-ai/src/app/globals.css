@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7fb;
-  --foreground: #0b0b12;
-  --card: #ffffff;
-  --muted: #5b5b6a;
-  --border: rgba(10, 10, 20, 0.10);
+  /* Design system (premium dark) */
+  --background: #0b0b0f;
+  --foreground: rgba(255, 255, 255, 0.92);
+  --card: #111117;
+  --muted: rgba(255, 255, 255, 0.68);
+  --border: rgba(255, 255, 255, 0.08);
   --ring: rgba(124, 58, 237, 0.35);
   --primary: #7c3aed; /* purple-600 */
   --primary-foreground: #ffffff;
@@ -24,16 +25,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #07070a;
-    --foreground: #f3f4f6;
-    --card: rgba(255, 255, 255, 0.06);
-    --muted: rgba(243, 244, 246, 0.70);
-    --border: rgba(255, 255, 255, 0.12);
-    --ring: rgba(167, 139, 250, 0.35);
-    --primary: #a78bfa; /* purple-300 */
-    --primary-foreground: #0b0b12;
+    /* keep light mode close to dark for brand consistency */
+    --background: #0b0b0f;
+    --foreground: rgba(255, 255, 255, 0.92);
+    --card: #111117;
+    --muted: rgba(255, 255, 255, 0.68);
+    --border: rgba(255, 255, 255, 0.08);
+    --ring: rgba(124, 58, 237, 0.35);
+    --primary: #7c3aed;
+    --primary-foreground: #ffffff;
   }
 }
 
@@ -44,6 +46,12 @@ body {
 
 * {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {

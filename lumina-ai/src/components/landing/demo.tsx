@@ -1,45 +1,56 @@
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Section } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Demo() {
   return (
-    <section id="demo" className="py-14 sm:py-20">
+    <Section id="demo" glow="both">
       <Container>
-        <SectionHeading
-          eyebrow="Demo"
-          title="See Lumina in Action"
-          description="Watch how Lumina automates prospect outreach in under 60 seconds."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Demo"
+            title="See Lumina in action"
+            description="A quick walkthrough of the AI-powered workflow—from prospect to reply."
+            align="center"
+          />
+        </Reveal>
 
-        <div className="mt-10">
-          <Card className="overflow-hidden">
-            <div className="aspect-video w-full bg-[linear-gradient(135deg,rgba(124,58,237,0.18),rgba(0,0,0,0)_55%),linear-gradient(0deg,rgba(0,0,0,0.03),rgba(0,0,0,0.03))] dark:bg-[linear-gradient(135deg,rgba(167,139,250,0.18),rgba(0,0,0,0)_55%),linear-gradient(0deg,rgba(255,255,255,0.04),rgba(255,255,255,0.04))]">
-              <div className="grid h-full place-items-center p-6">
-                <div className="text-center">
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-card ring-1 ring-border shadow-sm">
+        <Reveal delayMs={120} className="mt-12">
+          <Card className="group overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10 shadow-[0_25px_120px_-80px_rgba(124,58,237,0.55)]">
+            <div className="relative aspect-video w-full">
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-[radial-gradient(900px_circle_at_30%_10%,rgba(124,58,237,0.22),transparent_60%),linear-gradient(180deg,rgba(255,255,255,0.06),transparent_40%)]"
+              />
+
+              <div className="absolute inset-0 grid place-items-center p-6">
+                <div className="relative text-center">
+                  <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-background/60 ring-1 ring-white/10 backdrop-blur transition duration-300 group-hover:scale-105">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                       <path
                         d="M10 8l6 4-6 4V8z"
                         fill="currentColor"
-                        opacity="0.9"
+                        opacity="0.92"
                       />
                     </svg>
                   </div>
-                  <p className="mt-3 text-sm font-medium text-foreground">
+                  <p className="mt-4 text-sm font-medium text-foreground">
                     Demo video placeholder
                   </p>
                   <p className="mt-1 text-sm text-muted">
-                    Replace this with an embed (YouTube/Loom) when ready.
+                    Swap this area with a Loom/YouTube embed when ready.
                   </p>
                 </div>
               </div>
+
+              <div className="absolute inset-0 transition duration-300 group-hover:scale-[1.01]" />
             </div>
           </Card>
-        </div>
+        </Reveal>
       </Container>
-    </section>
+    </Section>
   );
 }
 

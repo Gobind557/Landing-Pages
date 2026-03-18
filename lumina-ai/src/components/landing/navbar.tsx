@@ -7,12 +7,12 @@ const navLinks: Array<{ label: string; href: string }> = [
   { label: "Features", href: "#features" },
   { label: "How it Works", href: "#how-it-works" },
   { label: "Demo", href: "#demo" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Built in Public", href: "#built-in-public" },
 ];
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-background/80 backdrop-blur dark:border-white/[0.10]">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/70 backdrop-blur supports-backdrop-filter:bg-background/60">
       <Container className="flex h-16 items-center justify-between">
         <Link href="#top" className="inline-flex items-center gap-2">
           <LuminaLogo />
@@ -38,8 +38,8 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <Button href="#pricing" size="sm">
-          Get Started
+        <Button href="#early-access" size="sm">
+          Get Early Access
         </Button>
       </Container>
     </header>

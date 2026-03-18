@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Section } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 
 const steps = [
   {
@@ -77,43 +79,47 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-14 sm:py-20">
+    <Section id="how-it-works" glow="right">
       <Container>
-        <SectionHeading
-          eyebrow="Workflow"
-          title="How Lumina Works"
-          description="A simple, repeatable system to scale outbound without scaling busywork."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Workflow"
+            title="A simple loop: ship messages, learn faster"
+            description="Set up once, then let Lumina run follow-ups and surface what’s working—without losing your voice."
+            align="center"
+          />
+        </Reveal>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {steps.map((s) => (
-            <Card key={s.title} className="p-6">
-              <div className="flex items-center justify-between">
-                <div className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1 text-xs font-medium text-muted ring-1 ring-border">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
-                  <span>{s.pill}</span>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {steps.map((s, idx) => (
+            <Reveal key={s.title} delayMs={idx * 80}>
+              <Card className="rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-none transition duration-300 hover:bg-white/10 hover:ring-[rgba(124,58,237,0.40)]">
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-muted ring-1 ring-white/10">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
+                    <span>{s.pill}</span>
+                  </div>
+                  <div className="grid h-10 w-10 place-items-center rounded-2xl bg-[rgba(124,58,237,0.14)] text-(--color-primary) ring-1 ring-[rgba(124,58,237,0.24)]">
+                    {s.icon}
+                  </div>
                 </div>
-                <div className="grid h-9 w-9 place-items-center rounded-2xl bg-[color-mix(in_oklab,var(--primary)_12%,transparent)] text-primary ring-1 ring-[color-mix(in_oklab,var(--primary)_20%,transparent)]">
-                  {s.icon}
-                </div>
-              </div>
-              <h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-muted">{s.description}</p>
+                <h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{s.description}</p>
 
-              <div className="mt-5 rounded-2xl bg-background/60 p-4 ring-1 ring-border">
-                <div className="h-2 w-24 rounded-full bg-black/[0.06] dark:bg-white/[0.12]" />
-                <div className="mt-3 h-2 w-40 rounded-full bg-black/[0.06] dark:bg-white/[0.12]" />
-                <div className="mt-3 h-2 w-32 rounded-full bg-black/[0.06] dark:bg-white/[0.12]" />
-                <div className="mt-4 h-8 w-full rounded-xl bg-[color-mix(in_oklab,var(--primary)_10%,transparent)] ring-1 ring-[color-mix(in_oklab,var(--primary)_20%,transparent)]" />
-              </div>
-            </Card>
+                <div className="mt-6 rounded-2xl bg-background/50 p-4 ring-1 ring-white/10">
+                  <div className="h-2 w-24 rounded-full bg-white/10" />
+                  <div className="mt-3 h-2 w-40 rounded-full bg-white/10" />
+                  <div className="mt-3 h-2 w-32 rounded-full bg-white/10" />
+                  <div className="mt-4 h-8 w-full rounded-xl bg-[rgba(124,58,237,0.12)] ring-1 ring-[rgba(124,58,237,0.22)]" />
+                </div>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

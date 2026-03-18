@@ -13,7 +13,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-black/[0.06] py-10 dark:border-white/[0.10]">
+    <footer className="border-t border-white/10 py-10">
       <Container className="flex flex-col gap-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <LuminaLogo />

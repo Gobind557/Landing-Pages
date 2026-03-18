@@ -19,7 +19,7 @@ export function SectionHeading({
   return (
     <div className={`${textAlign} ${mx} max-w-2xl`}>
       {eyebrow ? (
-        <div className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1 text-xs font-medium text-muted ring-1 ring-border">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-muted ring-1 ring-white/10">
           <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
           <span>{eyebrow}</span>
         </div>
