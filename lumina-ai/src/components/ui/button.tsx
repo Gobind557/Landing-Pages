@@ -31,16 +31,37 @@ export function Button({
   size = "md",
   className = "",
   target,
+  onClick,
+  type = "button",
+  disabled,
 }: {
-  href: string;
+  href?: string;
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
   target?: "_blank" | "_self";
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99]";
+    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] disabled:pointer-events-none disabled:opacity-50";
+
+  const appliedClasses = `${base} ${classesForVariant(variant)} ${classesForSize(size)} ${className}`;
+
+  if (!href) {
+    return (
+      <button
+        onClick={onClick}
+        type={type}
+        disabled={disabled}
+        className={appliedClasses}
+      >
+        {children}
+      </button>
+    );
+  }
 
   const rel = target === "_blank" ? "noreferrer noopener" : undefined;
 
@@ -49,7 +70,8 @@ export function Button({
       href={href}
       target={target}
       rel={rel}
-      className={`${base} ${classesForVariant(variant)} ${classesForSize(size)} ${className}`}
+      onClick={onClick}
+      className={appliedClasses}
     >
       {children}
     </Link>

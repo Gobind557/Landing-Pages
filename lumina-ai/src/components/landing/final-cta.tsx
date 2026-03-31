@@ -10,7 +10,6 @@ export function FinalCTA() {
       <Container>
         <Reveal>
           <Card
-            id="early-access"
             className="relative overflow-hidden rounded-2xl bg-white/5 p-8 ring-1 ring-white/10 shadow-[0_35px_140px_-110px_rgba(124,58,237,0.65)] sm:p-10"
           >
             <div
@@ -26,16 +25,7 @@ export function FinalCTA() {
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href="#early-access" className="w-full sm:w-auto">
-                  Get Early Access
-                </Button>
-                <Button
-                  href="#demo"
-                  variant="secondary"
-                  className="w-full sm:w-auto"
-                >
-                  Watch Demo
-                </Button>
+
               </div>
             </div>
           </Card>

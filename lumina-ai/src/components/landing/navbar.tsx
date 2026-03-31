@@ -38,7 +38,7 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <Button href="#early-access" size="sm">
+        <Button href="#join" size="sm">
           Get Early Access
         </Button>
       </Container>

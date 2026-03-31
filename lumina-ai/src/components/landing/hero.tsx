@@ -27,7 +27,7 @@ export function Hero() {
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="#early-access" className="w-full sm:w-auto">
+            <Button href="#join" className="w-full sm:w-auto">
               Get Early Access
             </Button>
             <Button href="#demo" variant="secondary" className="w-full sm:w-auto">

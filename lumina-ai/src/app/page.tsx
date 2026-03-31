@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/landing/how-it-works";
 import { Navbar } from "@/components/landing/navbar";
 import { ProductPreview } from "@/components/landing/product-preview";
 import { SocialProof } from "@/components/landing/social-proof";
+import { EarlyAccessModal } from "@/components/landing/early-access-modal";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <EarlyAccessModal />
     </div>
   );
 }
