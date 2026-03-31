@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -44,26 +43,12 @@ export function Hero() {
         <Reveal delayMs={120} className="relative">
           <div className="absolute -inset-6 -z-10 rounded-[28px] bg-[radial-gradient(closest-side,rgba(124,58,237,0.22),transparent_70%)] blur-2xl" />
           <div className="relative rounded-2xl bg-[#0e0e14] p-2 ring-1 ring-white/10 shadow-[0_20px_80px_-50px_rgba(124,58,237,0.55)]">
-            <Image
-              src="/landing/dashboard-hero.svg"
+            {/* Using <img> to keep compatibility with static export (`output: export`). */}
+            <img
+              src="/Preview.png"
               alt="Lumina AI dashboard preview"
-              width={1200}
-              height={760}
               className="h-auto w-full rounded-2xl"
-              priority
             />
-
-            <div className="pointer-events-none absolute left-4 top-4 hidden items-center gap-2 rounded-full bg-background/60 px-3 py-1 text-xs font-medium text-foreground ring-1 ring-white/10 backdrop-blur sm:inline-flex">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
-              <span>Campaign Active</span>
-            </div>
-            <div className="pointer-events-none absolute right-4 top-4 hidden rounded-full bg-background/60 px-3 py-1 text-xs font-medium text-foreground ring-1 ring-white/10 backdrop-blur sm:inline-flex">
-              +3 Replies
-            </div>
-            <div className="pointer-events-none absolute bottom-4 left-4 hidden items-center gap-2 rounded-full bg-background/60 px-3 py-1 text-xs font-medium text-foreground ring-1 ring-white/10 backdrop-blur sm:inline-flex">
-              <span className="text-primary">AI Reply</span>
-              <span className="text-muted">drafted</span>
-            </div>
           </div>
           <div className="mt-3 flex items-center justify-between text-xs text-muted">
             <span>Prospects • Campaigns • Insights</span>

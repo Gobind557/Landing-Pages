@@ -14,7 +14,11 @@ export function Section({
   glow?: "none" | "left" | "right" | "both";
 }) {
   return (
-    <section id={id} className={`relative py-24 ${className}`}>
+    <section
+      id={id}
+      className={`relative overflow-hidden py-24 ${className}`}
+    >
+      {/* Prevent decorative glow/blur layers from creating horizontal scroll. */}
       {glow !== "none" ? (
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           {glow === "left" || glow === "both" ? (
